@@ -1,0 +1,1 @@
+var dogBook_app = angular.module('dogBookApp', []);
