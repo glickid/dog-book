@@ -18,6 +18,10 @@ dogBook_app.factory('dogBookSrv', function ($http, $log, $q, $timeout) {
                 angular.forEach(success.data.message, function (key, value) {
                     if (key.length) {
                         for (var i = 0; i < key.length; i++) {
+
+                            //there are no images for coton-detulear on server skip it!
+                            if (value + "-" + key[i] === "coton-detulear")
+                                continue;
                             var dog = new Dog(value + "-" + key[i], "", []);
                             dogArr.push(dog);
                         }
