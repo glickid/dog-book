@@ -1,5 +1,5 @@
 <div class="container">
-    <h1 class="my-4 text-center text-lg-left">Dog Breed Gallery</h1>
+    <h1 class="my-4 text-center text-lg-left">All Breeds Gallery</h1>
 
     <div class="input-group mb-5 mt-5 w-100">
             <input type="text" class="bg-success text-white form-control" placeholder="Search a dog in Gallery" ng-model="aFilter">
@@ -14,7 +14,7 @@
                     <h3>{{dog.breed}}</h3>
                 </div>
                 <a href="javascript:void(0)" class="img-thumbnail">
-                    <img class="img-box" ng-src="{{dog.randomPic}}" class="card-img-bottom">
+                    <img class="img-box" ng-click="showGalleryOfDog(dog)"" ng-src="{{dog.randomPic}}" class="card-img-bottom">
                 </a>
             </div>
         </div>

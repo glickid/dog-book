@@ -1,4 +1,4 @@
-dogBook_app.controller('dogBookCtrl', function ($scope, dogBookSrv) {
+dogBook_app.controller('dogBookCtrl', function ($scope, $location, dogBookSrv) {
 
     $scope.dogsArr = dogBookSrv.getDogsArr();
 
@@ -39,5 +39,10 @@ dogBook_app.controller('dogBookCtrl', function ($scope, dogBookSrv) {
         else {
             return false;
         }
+    }
+
+    $scope.showGalleryOfDog = function(dog)
+    {
+        $location.path("/dog/" + dog.breed );
     }
 });
