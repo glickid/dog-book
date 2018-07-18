@@ -17,4 +17,17 @@ dogBook_app.controller('dogBookCtrl', function ($scope, dogBookSrv) {
         });
     }
 
+    $scope.aFilter = "";
+    
+    $scope.dogFilter = function (dog) {
+        var lowerBreed = dog.breed.toLowerCase()
+        
+        if (lowerBreed.includes($scope.aFilter) ||
+            dog.breed.includes($scope.aFilter) ) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 });

@@ -1,7 +1,12 @@
 <div class="container">
     <h1 class="my-4 text-center text-lg-left">Dog Breed Gallery</h1>
+
+    <div class="input-group mb-5 mt-5">
+            <input type="text" class="bg-info text-dark form-control" placeholder="Search a dog in Gallery" ng-model="aFilter">
+            <!-- <label for="orderby">Order By:</label> -->
+        </div>
     <div class="row text-center text-lg-left">
-        <div class="col-lg-3 col-md-4 col-xs-6" ng-repeat="dog in dogsArr">
+        <div class="col-lg-3 col-md-4 col-xs-6" ng-repeat="dog in dogsArr | filter : dogFilter ">
             <div class="card ml-1 mt-3">
                 <!-- ng-repeat="dog in dogsArr"> -->
                 <div class="card-body text-center">
