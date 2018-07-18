@@ -7,6 +7,6 @@ dogBook_app.controller("homeCtrl", function ($scope, $location) {
 
     $scope.gotoBreedGallery = function (breed)
     {
-        $location.path('/dogs/breed')
+        $location.path('/dog/breed')
     }
 });

@@ -7,13 +7,13 @@ dogBook_app.config(function($routeProvider) {
       controller : 'homeCtrl'
     })
     .when('/dogsGallery', {
-        templateUrl : 'App/dogBook/dogsGallery.html',
+        templateUrl : 'App/dogBook/dogBook.html',
         controller : 'dogBookCtrl'
     })
-    // .when('/dogs/:dogBreed', {
-    //     templateUrl : 'App/Movies/moviesGallery.html',
-    //     controller : 'moviesCtrl'
-    // })
+    .when('/dog/:dogBreed', {
+        templateUrl : 'App/dogGallery/dogGallery.html',
+        controller : 'dogGalleryCtrl'
+    })
     .otherwise({redirectTo: '/'
     });
 });

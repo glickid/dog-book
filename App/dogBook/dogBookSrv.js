@@ -85,9 +85,50 @@ dogBook_app.factory('dogBookSrv', function ($http, $log, $q, $timeout) {
         return (async.promise);
     }
 
+    function getBreedGallery(breed)
+    {
+        var async = $q.defer();
+
+        for(var i =0;i<dogArr.length; i++)
+        {
+            if(breed === dogArr[i].breed)
+            {
+                async.promise = getDogGallery(dogArr[i]);
+                break;
+            }
+        }
+        if (i === dogArr.length)
+            async.reject("failed to find " + breed + " in Gallery");
+
+        return async.promise;
+    }
+
+    function getDogGallery(dog)
+    {
+        var breedUrl = "https://dog.ceo/api/breed/" + dog.breed + "/images";
+        var async = $q.defer();
+
+        $http.get(breedUrl).then(function (success) {
+
+            dog.picList = success.data.message;
+            async.resolve(dog.picList);
+
+        }, function (error) {
+
+            $log.log(error);
+            async.reject("failed to get image for " + breed);
+
+        });
+
+        return async.promise;
+    }
+
     return {
         getBreedList: getBreedList,
         getRandomImages: getRandomImages,
-        getDogsArr : getDogsArr
+        getDogsArr : getDogsArr,
+        getBreedGallery : getBreedGallery,
+        getImagesRandomForBreed : getImagesRandomForBreed,
+        getDogGallery : getDogGallery
     };
 });
