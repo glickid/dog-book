@@ -3,22 +3,32 @@ dogBook_app.controller('dogBookCtrl', function ($scope, dogBookSrv) {
     $scope.dogsArr = dogBookSrv.getDogsArr();
 
     if ($scope.dogsArr.length === 0) {
+        getBreedList();
+    }
+
+    $scope.aFilter = "";
+    
+
+    function getBreedList ()
+    {
         dogBookSrv.getBreedList().then(function (success) {
             $scope.dogsArr = success;
 
-            dogBookSrv.getRandomImages().then(function (success) {
-                $scope.dogsArr = success;
-            }, function (error) {
-                console.log(error);
-            });
+            $scope.refreshGalleryPics();
 
         }, function (error) {
             cosole.log(error);
         });
     }
 
-    $scope.aFilter = "";
-    
+    $scope.refreshGalleryPics = function ()
+    {
+        dogBookSrv.getRandomImages().then(function (success) {
+            $scope.dogsArr = success;
+        }, function (error) {
+            console.log(error);
+        });
+    }
     $scope.dogFilter = function (dog) {
         var lowerBreed = dog.breed.toLowerCase()
         
