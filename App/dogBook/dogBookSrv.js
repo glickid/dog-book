@@ -8,6 +8,11 @@ dogBook_app.factory('dogBookSrv', function ($http, $log, $q, $timeout) {
     }
     var dogArr = [];
 
+    function getDogsArr()
+    {
+        return dogArr;
+    }
+
     function getBreedList() {
         var listBreedUrl = "https://dog.ceo/api/breeds/list/all"
         var async = $q.defer();
@@ -82,6 +87,7 @@ dogBook_app.factory('dogBookSrv', function ($http, $log, $q, $timeout) {
 
     return {
         getBreedList: getBreedList,
-        getRandomImages: getRandomImages
+        getRandomImages: getRandomImages,
+        getDogsArr : getDogsArr
     };
 });
