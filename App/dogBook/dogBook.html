@@ -4,7 +4,7 @@
             <nav>
                 <ul class="d-block">
                     <div ng-repeat="dog in dogsArr | filter : dogFilter">
-                        <li ng-class="{ 'mt-100': $first }" class="side-bar-link d-block">
+                        <li ng-class="{ 'mt-100': $first, 'mt-2': !$first }"  class="side-bar-link d-block">
                             <a class="d-inline-block" href="javascript:void(0)" target="_blank" ng-click="showGalleryOfDog(dog)">{{dog.breed}}</a>
                         </li>
                     </div>

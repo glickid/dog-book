@@ -15,9 +15,7 @@ body {
 }
 
 .img-box {
-    /*border: 1px solid #ddd; /* Gray border */
     border-radius: 10px;  /* Rounded border */
-    /*padding: 0px; /* Some padding */
     max-width: 100%; /* Set a small width */
     max-height: 100%; 
     background: url(assets/placeholder.jpg) no-repeat scroll 0 0;
@@ -31,11 +29,11 @@ body {
 nav > ul {
     background-color: darkblue;
     list-style-type: none;
+    font-size: 1.2vw;
 }
 
 .side-bar-link {
     text-decoration: none;
-    /* padding-top: 10px; */
     width: 100%;
     margin-left: 0;
 } 
@@ -51,3 +49,10 @@ nav > ul {
 .mt-100 {
     margin-top: 145px;
 }
+
+@media screen and (max-width: 600px) {
+    nav > ul {
+        font-size: 3vw;
+    }
+    
+  }
