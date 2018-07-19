@@ -88,30 +88,29 @@ dogBook_app.factory('dogBookSrv', function ($http, $log, $q, $timeout) {
     function getBreedGallery(breed)
     {
         var async = $q.defer();
+        var index = 0;
+        var breedUrl = "https://dog.ceo/api/breed/" + breed + "/images";
 
-        for(var i =0;i<dogArr.length; i++)
+        for(var index =0;index<dogArr.length; index++)
         {
-            if(breed === dogArr[i].breed)
+            if(breed === dogArr[index].breed)
             {
-                async.promise = getDogGallery(dogArr[i]);
+                //async.promise = getDogGallery(dogArr[index]);
                 break;
             }
         }
-        if (i === dogArr.length)
-            async.reject("failed to find " + breed + " in Gallery");
-
-        return async.promise;
-    }
-
-    function getDogGallery(dog)
-    {
-        var breedUrl = "https://dog.ceo/api/breed/" + dog.breed + "/images";
-        var async = $q.defer();
-
-        $http.get(breedUrl).then(function (success) {
-
-            dog.picList = success.data.message;
-            async.resolve(dog.picList);
+        
+        $http.get(breedUrl).then(function (success, index) {
+        
+            if (index < dogArr.length)
+            {
+                dogArr[index].picList = success.data.message;
+                async.resolve(dog.picList);
+            }
+            else
+            {
+                async.resolve(success.data.message);
+            }
 
         }, function (error) {
 
@@ -128,7 +127,7 @@ dogBook_app.factory('dogBookSrv', function ($http, $log, $q, $timeout) {
         getRandomImages: getRandomImages,
         getDogsArr : getDogsArr,
         getBreedGallery : getBreedGallery,
-        getImagesRandomForBreed : getImagesRandomForBreed,
-        getDogGallery : getDogGallery
+        getImagesRandomForBreed : getImagesRandomForBreed
+        //getDogGallery : getDogGallery
     };
 });

@@ -8,6 +8,7 @@ dogBook_app.controller('dogGalleryCtrl', function ($log, $scope,
         function (success) {
             $scope.dogGallery = success;
         }, function(error) {
+            $scope.dogGallery = [];
             console.log(error);
         }
     )
