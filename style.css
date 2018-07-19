@@ -4,7 +4,21 @@ body {
     background-color: lightslategray;
 }
    
+#dog-cook-container {
+    height: 600px;
+    }
+    
+       
+/* #dog-cook-container .img-responsive { */
+#dog-cook-container .card-img-top {
+    display: block;
+        width: auto;
+        max-height: 100%;
+    }
 
+.opacity-50 {
+    opacity: 50%;
+}
 .jumbotron {
     background: url(assets/dog\ Foot\ Print.jpg) repeat scroll 0 0;
     background-size: 70px;
