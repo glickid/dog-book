@@ -1,22 +1,38 @@
-<div class="container">
-    <h1 class="my-4 text-center text-lg-left">All Breeds Gallery</h1>
-
-    <div class="input-group mb-5 mt-5 w-100">
-            <input type="text" class="bg-success text-white form-control" placeholder="Search a dog in Gallery" ng-model="aFilter">
-            <button type="button" class="btn btn-info w-100" ng-click="refreshGalleryPics()">Choose another pics for all</button>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-2">
+            <nav>
+                <ul class="d-block">
+                    <div ng-repeat="dog in dogsArr | filter : dogFilter">
+                        <li ng-class="{ 'mt-100': $first }" class="side-bar-link d-block">
+                            <a class="d-inline-block" href="javascript:void(0)" target="_blank" ng-click="showGalleryOfDog(dog)">{{dog.breed}}</a>
+                        </li>
+                    </div>
+                </ul>
+            </nav>
         </div>
-        
-    <div class="row text-center text-lg-left">
-        <div class="col-lg-3 col-md-4 col-xs-6" ng-repeat="dog in dogsArr | filter : dogFilter ">
-            <div class="card ml-1 mt-3">
-                <!-- ng-repeat="dog in dogsArr"> -->
-                <div class="card-body text-center">
-                    <h3>{{dog.breed}}</h3>
+        <div class="col-sm-10">
+            <div class="row">
+                <h1 class="my-4 text-center text-lg-left">All Breeds Gallery</h1>
+                <div class="input-group mb-5 mt-5 w-100">
+                    <input type="text" class="bg-success text-white form-control" placeholder="Search a dog in Gallery" ng-model="aFilter">
+                    <button type="button" class="btn btn-info w-100" ng-click="refreshGalleryPics()">Choose another pics for all</button>
                 </div>
-                <a href="javascript:void(0)" class="img-thumbnail">
-                    <img class="img-box" ng-click="showGalleryOfDog(dog)"" ng-src="{{dog.randomPic}}" class="card-img-bottom">
-                </a>
+
+
+                <div class="col-lg-3 col-md-4 col-xs-6" ng-repeat="dog in dogsArr | filter : dogFilter ">
+                    <div class="text-center text-lg-left">
+                        <div class="card ml-1 mt-3">
+                            <!-- ng-repeat="dog in dogsArr"> -->
+                            <div class="card-body text-center">
+                                <h3>{{dog.breed}}</h3>
+                            </div>
+                            <a href="javascript:void(0)" class="img-thumbnail">
+                                <img class="img-responsive img-box" ng-click="showGalleryOfDog(dog)" ng-src="{{dog.randomPic}}" class="card-img-bottom">
+                            </a>
+                        </div>
+                    </div>
+                </div>ז
             </div>
         </div>
     </div>
-</div>

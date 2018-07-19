@@ -4,22 +4,22 @@ body {
     background-color: lightslategray;
 }
    
+
 .jumbotron {
     background: url(assets/dog\ Foot\ Print.jpg) repeat scroll 0 0;
     background-size: 70px;
 }
 
-.oops {
-    position: relative;
-    left: 370px;
-    top: 120px;
+.card-img-bottom {
+    width: 20%;
 }
+
 .img-box {
-    border: 1px solid #ddd; /* Gray border */
-    border-radius: 4px;  /* Rounded border */
-    padding: 5px; /* Some padding */
-    width: 240px; /* Set a small width */
-    height: 240px;
+    /*border: 1px solid #ddd; /* Gray border */
+    border-radius: 10px;  /* Rounded border */
+    /*padding: 0px; /* Some padding */
+    max-width: 100%; /* Set a small width */
+    max-height: 100%; 
     background: url(assets/placeholder.jpg) no-repeat scroll 0 0;
 }
 
@@ -28,15 +28,26 @@ body {
     box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
 }
 
-/* .w-100 {
+nav > ul {
+    background-color: darkblue;
+    list-style-type: none;
+}
+
+.side-bar-link {
+    text-decoration: none;
+    /* padding-top: 10px; */
     width: 100%;
+    margin-left: 0;
+} 
+
+/* .side-bar-link > a:hover {
+    background-color: rgb(177, 223, 53);
 } */
 
-@media (min-width: 992px) {
-    body {
-        padding-top: 56px;
-    }
-    body {
-        padding-top: 56px;
-    }
+.side-bar-link:hover {
+    background-color: blueviolet;
+}
+
+.mt-100 {
+    margin-top: 145px;
 }
