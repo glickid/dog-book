@@ -4,17 +4,17 @@ body {
     background-color: lightslategray;
 }
    
-#dog-cook-container {
-    height: 600px;
-    }
-    
+#dog-book-container {
+    /* height: 600px; */
+    background: url( assets/13-Corkboard.jpg) repeat scroll 0 0;
+}
        
-/* #dog-cook-container .img-responsive { */
-#dog-cook-container .card-img-top {
+/* #dog-book-container .img-responsive { */
+#dog-book-container .card-img-top {
     display: block;
-        width: auto;
-        max-height: 100%;
-    }
+    width: auto;
+    max-height: 100%;
+}
 
 .opacity-50 {
     opacity: 50%;
@@ -31,8 +31,8 @@ body {
 
 .img-box {
     border-radius: 10px;  /* Rounded border */
-    max-width: 100%; /* Set a small width */
-    max-height: 100%; 
+    /* max-width: 100%; Set a small width */
+    /* max-height: 100%;  */
     background: url(assets/placeholder.jpg) no-repeat scroll 0 0;
 }
 
@@ -65,9 +65,22 @@ nav > ul {
     margin-top: 145px;
 }
 
+.base {
+    position : relative;
+}
+
+.thumbtack {
+    position: absolute;
+    top: -5%;
+    left: 35%;
+    width: 44px;
+    z-index : 100;
+    /* opacity: 50%; */
+}
+
 @media screen and (max-width: 600px) {
     nav > ul {
-        font-size: 3vw;
+        font-size:4vw;
     }
     
   }

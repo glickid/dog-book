@@ -57,7 +57,9 @@ dogBook_app.factory('dogBookSrv', function ($http, $log, $q, $timeout) {
 
         }, function (error) {
 
+
             $log.log(error);
+            dogArr[index].randomPic = "/assests/placeholder.jpg"
             async.reject("failed to get image for " + breed);
 
         });

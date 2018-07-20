@@ -1,4 +1,4 @@
-<div class="container-fluid" id="dog-cook-container">
+<div class="container-fluid" id="dog-book-container">
     <div class="row">
         <div class="col-sm-2">
             <nav>
@@ -27,9 +27,13 @@
                             <!-- <div class="card-body text-center">
                                 <h3>{{dog.breed}}</h3>
                             </div> -->
-                            <a href="javascript:void(0)" class="img-thumbnail">
+                            <a href="javascript:void(0)" class="img-thumbnail img-box">
                                 <!-- <img class="img-responsive img-box" ng-click="showGalleryOfDog(dog)" ng-src="{{dog.randomPic}}" class="card-img-bottom"> -->
-                                <img class="card-img-top img-fluid" ng-click="showGalleryOfDog(dog)" ng-src="{{dog.randomPic}}" class="card-img-bottom">
+                                <img class="thumbtack" src="/assets/thumbtack7.png" alt="" srcset="">
+                                <img class="card-img-top img-fluid base" 
+                                    ng-click="showGalleryOfDog(dog)" ng-src="{{dog.randomPic}}"
+                                    small="100" med="180" big="240" setImgSizeScreenResize >
+                                    <!-- class="card-img-bottom"> -->
                             </a>
                             <!-- text under pic -->
                             <div class="card-block text-center">
