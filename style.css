@@ -5,19 +5,12 @@ body {
 }
    
 #dog-book-container,  #dog-gallery-container {
-    /* height: 600px; */
     background: url( assets/13-Corkboard.jpg) repeat scroll 0 0;
 }
        
-/* #breed-list {
-    padding-left: 5px; 
-} */
-
 /* #dog-book-container .img-responsive { */
 #dog-book-container .card-img-top {
     display: block;
-    /* width: auto;
-    max-height: 100%; */
 }
 
 .opacity-50 {
@@ -58,10 +51,6 @@ nav > ul {
     width: 100%; */
     margin-left: 25px;
 } 
-
-/* .side-bar-li > a:hover {
-    background-color: rgb(177, 223, 53);
-} */
 
 .side-bar-li:hover {
     background-color: blueviolet;
