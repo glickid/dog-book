@@ -9,11 +9,15 @@ body {
     background: url( assets/13-Corkboard.jpg) repeat scroll 0 0;
 }
        
+/* #breed-list {
+    padding-left: 5px; 
+} */
+
 /* #dog-book-container .img-responsive { */
 #dog-book-container .card-img-top {
     display: block;
-    width: auto;
-    max-height: 100%;
+    /* width: auto;
+    max-height: 100%; */
 }
 
 .opacity-50 {
@@ -43,21 +47,23 @@ body {
 
 nav > ul {
     background-color: darkblue;
-    list-style-type: none;
+    /* list-style-type: none; */
     font-size: 1.4vw;
+    list-style-image: url('assets/list-icon.png');
+    padding-left: 10px;
 }
 
-.side-bar-link {
-    text-decoration: none;
-    width: 100%;
-    margin-left: 0;
+.side-bar-li {
+    /* text-decoration: none;
+    width: 100%; */
+    margin-left: 25px;
 } 
 
-/* .side-bar-link > a:hover {
+/* .side-bar-li > a:hover {
     background-color: rgb(177, 223, 53);
 } */
 
-.side-bar-link:hover {
+.side-bar-li:hover {
     background-color: blueviolet;
 }
 

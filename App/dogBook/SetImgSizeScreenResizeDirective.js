@@ -1,32 +1,40 @@
-dogBook_app.directive("setImgSizeScreenResize", ["$window", function ($window) {
+dogBook_app.directive("changeOnScreenResize", ["$window", function($window) {
     return {
-        restrict: 'A',
-        link: function (scope, elem, attrs) {
-            $window.onresize = function () {
-                changeImage();
-                scope.$apply();
-            }
-
-            //no such method 'on' for $window
-            //$window.on('resize', function(){
-            //});
-
-            //changeImage();
-
-            function changeImage() {
-                var screenWidth = $window.innerWidth;
-
-                if (screenWidth <= 512) {
-                    elem.attr('width', attrs.small);
-                    elem.attr('hieght', attrs.small);
-                } if (screenWidth <= 1024) {
-                    elem.attr('width', attrs.med);
-                    elem.attr('hieght', attrs.med);
-                } else {
-                    elem.attr('width', attrs.small);
-                    elem.attr('hieght', attrs.small);
-                }
-            }
+      restrict: 'A',
+      link: function(scope, elem, attrs) {
+        $window.onresize = function() {
+          changeImage();
+          scope.$apply();
         }
+        
+        //$window.on('resize', function(){
+        //  changeImage();
+        //  scope.$apply();
+        //});
+        //debugger;
+        changeImage();
+        
+        function changeImage() {
+          var screenWidth = $window.innerWidth;
+          
+          if(screenWidth <= 400) {
+            //attrs.src = attrs.small;
+            //elem.attr('src', attrs.small);
+            elem.attr('width', attrs.small);
+            elem.attr('height', attrs.small);
+          }
+
+          else if(screenWidth <= 1024) {
+            //attrs.src = attrs.small;
+            //elem.attr('src', attrs.small);
+            elem.attr('width', attrs.med);
+            elem.attr('height', attrs.med);
+          } else {
+            //elem.attr('src', attrs.big);
+            elem.attr('width', attrs.big);
+            elem.attr('height', attrs.big);
+          }
+        }
+      }
     };
-}])
+  }])

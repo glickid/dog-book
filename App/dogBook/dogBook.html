@@ -2,10 +2,11 @@
     <div class="row">
         <div class="col-sm-2">
             <nav>
-                <ul class="d-block">
+                <ul id="breed-list" class="d-block">
                     <div ng-repeat="dog in dogsArr | filter : dogFilter">
-                        <li ng-class="{ 'mt-100': $first, 'mt-2': !$first }" class="side-bar-link d-block">
-                            <a class="d-inline-block" href="javascript:void(0)" target="_blank" ng-click="showGalleryOfDog(dog)">{{dog.breed}}</a>
+                        <li ng-class="{ 'mt-100': $first, 'mt-2': !$first }" class="side-bar-li">
+                            <a class="d-inline-block" href="javascript:void(0)" target="_blank" ng-click="showGalleryOfDog(dog)">
+                            {{dog.breed}}</a>
                         </li>
                     </div>
                 </ul>
@@ -30,9 +31,9 @@
                             <a href="javascript:void(0)" class="img-thumbnail img-box">
                                 <!-- <img class="img-responsive img-box" ng-click="showGalleryOfDog(dog)" ng-src="{{dog.randomPic}}" class="card-img-bottom"> -->
                                 <img class="thumbtack" src="/assets/thumbtack7.png" alt="" srcset="">
-                                <img class="card-img-top img-fluid base" 
+                                <img change-on-screen-resize class="card-img-top img-fluid base" 
                                     ng-click="showGalleryOfDog(dog)" ng-src="{{dog.randomPic}}"
-                                    small="100" med="180" big="240" setImgSizeScreenResize >
+                                    small="100px" med="180px" big="240px">
                                     <!-- class="card-img-bottom"> -->
                             </a>
                             <!-- text under pic -->
