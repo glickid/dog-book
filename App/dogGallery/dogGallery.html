@@ -1,24 +1,8 @@
-<!-- <div class="container mb-5">
-    <h1 class="my-4 text-center text-lg-left">{{theBreed}} Breed Gallery</h1>
-    <div class="row text-center text-lg-left">
-        <div class="col-lg-3 col-md-4 col-xs-6 mb-5" ng-repeat="pic in dogGallery | filter : dogFilter ">
-            <div class="card ml-1 mt-3">
-                <a ng-href="{{pic}}" target="new">
-                    <img class="img-box" ng-src="{{pic}}" class="card-img-bottom">
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="row align-items-center justify-content-center" ng-show="dogGallery.length == 0">
-        <h2 class="text-danger oops">oops, breed "{{theBreed}}" not found</h2>
-    </div>
-</div> -->
 <div class="container mb-5" id="dog-gallery-container">
     <h1 class="my-4 text-center text-lg-left">{{theBreed}} Breed Gallery</h1>
     <div class="row ">
         <div class="col-lg-3 col-md-4 col-xs-6 mt-2" ng-class="{'mb-5':$last}" ng-repeat="pic in dogGallery | filter : dogFilter ">
             <div class="card">
-                <!-- <div class="card ml-1 mt-3"> -->
                 <a ng-href="{{pic}}" target="new">
                     <img class="thumbtack" src="/assets/thumbtack6.png" alt="">
                     <img class="card-img-top img-fluid" ng-src="{{pic}}" class="card-img-bottom">
