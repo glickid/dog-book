@@ -4,7 +4,7 @@ body {
     background-color: lightslategray;
 }
    
-#dog-book-container {
+#dog-book-container,  #dog-gallery-container {
     /* height: 600px; */
     background: url( assets/13-Corkboard.jpg) repeat scroll 0 0;
 }
